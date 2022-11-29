@@ -21,7 +21,8 @@ server.use(cors())
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://iridescent-youtiao-b25959.netlify.app');
   res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Authorization, Accept');
+  res.header('Access-Control-Allow-Headers', 'append,delete,entries,foreach,get,has,keys,set,values,Authorization ');
+    //Origin, X-Requested-With, Content-Type,  Accept
   res.header('Access-Control-Allow-Methods', 'HEAD , GET, POST, OPTIONS, PUT, DELETE, PATCH');
   next();
 });
