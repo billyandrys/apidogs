@@ -15,18 +15,8 @@ server.use(bodyParser.json({ limit: '50mb' }));
 server.use(cookieParser());
 server.use(morgan('dev'));
 server.use(cors())
-const isseuOptions = {
-  origin: true,
-  methods:['POST'],
-  credentials: true,
-  maxAge:3600
-}
-server.post('https://iridescent-youtiao-b25959.netlify.app/dogs', cors(isseuOptions), (req, res)=>{
-  console.info('Post / isse')
-  res.json({
-    text:'Issue-2'
-  })
-})
+
+
 
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://iridescent-youtiao-b25959.netlify.app');
