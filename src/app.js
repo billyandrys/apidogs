@@ -7,7 +7,7 @@ const cors = require('cors')
 require('./db.js');
 
 const server = express();
-server.use(cors({origin:[ 'https://iridescent-youtiao-b25959.netlify.app/' ]}))
+server.use(cors({origin:[ 'https://iridescent-youtiao-b25959.netlify.app/*' ]}))
 server.name = 'API';
 //, 'http://localhost:3000/'
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
@@ -18,8 +18,8 @@ server.use(cors())
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://iridescent-youtiao-b25959.netlify.app');
   res.header('Access-Control-Allow-Credentials', 'true');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Authorization, Accept');
+  res.header('Access-Control-Allow-Methods', 'HEAD , GET, POST, OPTIONS, PUT, DELETE, PATCH');
   next();
 });
 
