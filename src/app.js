@@ -7,7 +7,7 @@ const cors = require('cors')
 require('./db.js');
 
 const server = express();
-//server.use(cors({origin:['https://iridescent-youtiao-b25959.netlify.app/']}))
+server.use(cors({origin:['https://iridescent-youtiao-b25959.netlify.app/']}))
 server.name = 'API';
 //, 'http://localhost:3000/'
 server.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
